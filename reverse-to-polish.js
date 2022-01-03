@@ -13,14 +13,12 @@ function reverseToPolish(inputString) { // принимает строку по�
         if(element in Operators) {
             while (OperatorsArr.length != 0 && Operators[OperatorsArr[0]]['prioryty'] >= Operators[element]['prioryty']) {
                 NumsOutput.push(OperatorsArr.shift()) 
-
             }
             OperatorsArr.unshift(element)
         } else {
             NumsOutput.push(element)
         }   
-    });
-
+    })
     while (OperatorsArr.length != 0) {
         NumsOutput.push(OperatorsArr.shift())
     }
